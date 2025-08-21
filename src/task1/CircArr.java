@@ -1,3 +1,5 @@
+package task1;
+
 public class CircArr {
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);

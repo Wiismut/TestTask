@@ -1,7 +1,8 @@
+package task4;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MinSteps {
@@ -26,9 +27,6 @@ public class MinSteps {
             int sumStep = 0;
             for(int j = 0; j < nums.size(); j++) {
                 sumStep += Math.abs(nums.get(i) - nums.get(j));
-                if(sumStep > 20){
-                    return "20 ходов не достаточно для приведения всех элементов массива к одному числу";
-                }
             }
             stepsArr[i] = sumStep;
         }
@@ -38,8 +36,10 @@ public class MinSteps {
                 min = stepsArr[i];
             }
         }
-
-        return String.valueOf(min);
+        if(min > 20){
+            return "20 ходов не достаточно для приведения всех элементов массива к одному числу";
+        } else{
+        return String.valueOf(min); }
     }
 
 }

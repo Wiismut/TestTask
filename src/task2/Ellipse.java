@@ -1,3 +1,4 @@
+package task2;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -5,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Ellipse {
+    static double one = 1.000;
     public static void main(String[] args) throws FileNotFoundException {
 
         String path1 = args[0];
@@ -19,16 +21,16 @@ public class Ellipse {
             ellips_coord.add(sc.next());
         }
 
-        int x = Integer.parseInt(ellips_coord.get(0));
-        int y = Integer.parseInt(ellips_coord.get(1));
-        int a = Integer.parseInt(ellips_coord.get(2));
-        int b = Integer.parseInt(ellips_coord.get(3));
+        double x = Double.parseDouble(ellips_coord.get(0));
+        double y = Double.parseDouble(ellips_coord.get(1));
+        double a = Double.parseDouble(ellips_coord.get(2));
+        double b = Double.parseDouble(ellips_coord.get(3));
 
 
-        while (sc2.hasNextInt()) {
-            int x1 = sc2.nextInt();
-            if (sc2.hasNextInt()) {
-                int y1 = sc2.nextInt();
+        while (sc2.hasNextDouble()) {
+            double x1 = sc2.nextDouble();
+            if (sc2.hasNextDouble()) {
+                double y1 = sc2.nextDouble();
                 System.out.println(  ellipse(x,y,a,b,x1,y1) );
             }
         }
@@ -36,11 +38,11 @@ sc.close();
         sc2.close();
     }
 
-    static int ellipse(int x, int y, int a, int b, int x1, int y1){
-        if ((   Math.pow((x-x1), 2) / Math.pow(a,2)  ) + (   Math.pow((y-y1), 2) / Math.pow(b,2)    ) == 1  ){
+    static int ellipse(double x, double y, double a, double b, double x1, double y1){
+        if ((   Math.pow((x-x1), 2) / Math.pow(a,2)  ) + (   Math.pow((y-y1), 2) / Math.pow(b,2)    ) == one  ){
             return 0;
         }
-        else if ((   Math.pow((x-x1), 2) / Math.pow(a,2)  ) + (   Math.pow((y-y1), 2) / Math.pow(b,2)    ) < 1  ){
+        else if ((   Math.pow((x-x1), 2) / Math.pow(a,2)  ) + (   Math.pow((y-y1), 2) / Math.pow(b,2)    ) < one  ){
             return 1;
         }
         else {
